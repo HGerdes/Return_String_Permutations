@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1626215216511,
@@ -16,6 +16,14 @@
                 {
                     "date": 1626215414973,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-//returns all possible combinations of a string.\n+//returns all possible combinations of a string recursively\n \n let findCombos = (str) => {\n     let combos = [];\n \n@@ -8,9 +8,9 @@\n     }\n \n     for (let i = 0; i < str.length; i++) {\n       let char = str[i];\n-      let remainingChars = str.slice(0, i) + str.slice(i + 1, str.length); \n+      let remainingChars = str.slice(0, i) + str.slice(i + 1, str.length);\n \n       for (let combo of findCombos(remainingChars)) {\n         combos.push(char + combo)\n       }\n"
+                },
+                {
+                    "date": 1626215512951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,5 @@\n         combos.push(char + combo)\n       }\n     }\n     return combos;\n-  }\n+}\n"
+                },
+                {
+                    "date": 1626215522542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,19 @@\n //returns all possible combinations of a string recursively\n \n let findCombos = (str) => {\n-    let combos = [];\n+  let combos = [];\n \n-    if (str.length < 2) {\n-      return str;\n-    }\n+  if (str.length < 2) {\n+    return str;\n+  }\n \n-    for (let i = 0; i < str.length; i++) {\n-      let char = str[i];\n-      let remainingChars = str.slice(0, i) + str.slice(i + 1, str.length);\n+  for (let i = 0; i < str.length; i++) {\n+    let char = str[i];\n+    let remainingChars = str.slice(0, i) + str.slice(i + 1, str.length);\n \n-      for (let combo of findCombos(remainingChars)) {\n-        combos.push(char + combo)\n-      }\n+    for (let combo of findCombos(remainingChars)) {\n+      combos.push(char + combo)\n     }\n-    return combos;\n+  }\n+  return combos;\n }\n"
                 }
             ],
             "date": 1626215216511,
